@@ -19,18 +19,12 @@
       }
       function ChatbootMessage(props) {
         const sender = props.sender;
-        if(sender === 'chatbot'){
-          return(
-            <div>]
-              <img src="robot.png" width="30"/>
-              {props.message}
-            </div>
-          );
-        }
+        
         return(
           <div>
+            {sender === "chatbot" && <img src="robot.png" width="30"/>}
             {props.message}
-            <img src="user.png" width="30"/>
+            {sender === "user" && <img src="user.png" width="30"/>} 
           </div>
         );
       }
